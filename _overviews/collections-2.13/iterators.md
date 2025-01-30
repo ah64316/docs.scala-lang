@@ -241,8 +241,13 @@ Laziness is still valuable, despite often not being visible, as it can prevent u
 {% tab 'Scala 2 and 3' for=iterators_7 %}
 
 ```scala
-def zipWithIndex[A](i: Iterator[A]): Iterator[(Int, A)] =
-  Iterator.from(0).zip(i)
+scala> def zipWithIndex[A](i: Iterator[A]): Iterator[(Int, A)] = Iterator.from(0).zip(i)
+zipWithIndex: [A](i: Iterator[A])Iterator[(Int, A)]
+
+scala> zipWithIndex(Iterator("this", "that", "other")).foreach({ case (i, v) => println(s""""${v}" is at index ${i}""" )})
+"this" is at index 0
+"that" is at index 1
+"other" is at index 2
 ```
 
 {% endtab %}
